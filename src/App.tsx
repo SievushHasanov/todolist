@@ -17,7 +17,7 @@ function App() {
   ]);
   return (
     <TodoProvider>
-      <RouterProvider router={router}/>;
+      <RouterProvider router={router} />
     </TodoProvider>
   );
 }

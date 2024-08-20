@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  /* transform: scale(0); */
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
@@ -18,20 +17,43 @@
 
 .modal.active {
   opacity: 1;
-  pointer-events: all;
-
+  pointer-events: all; 
 }
 
 .modal__content {
   padding: 20px;
   border-radius: 12px;
   background-color: #d6d6d6;
-  width: 50vw; 
+  font-size: 36px;   
+  width: 90vw;  
+  max-width: 500px; 
   transform: scale(0.5);
   transition: .4s all;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .modal__content.active {
-  transform: scale(1);
-
+  transform: scale(1); 
 }
+
+ 
+.modal__content h2 {
+  font-size: 44px;  
+}  
+
+
+/* media */
+
+@media (max-width: 760px) {
+  .modal__content h2 {
+  font-size: 24px;  
+}
+}
+
+@media (max-width: 380px) {
+  .modal__content h2 {
+  font-size: 14px;  
+}
+}
+ 
+ 

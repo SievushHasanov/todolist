@@ -1,4 +1,4 @@
-import { Box, Button, Container, FormControl, TextField, Typography } from '@mui/material';
+import { Box, Button, FormControl, TextField, Typography, Container } from '@mui/material';
 import Lottie from 'lottie-react';
 import send from '../../lottie/send.json';
 import { useState } from 'react';
@@ -23,33 +23,34 @@ export default function TodoForm(): JSX.Element {
           variant="h1"
           sx={{
             textTransform: 'uppercase',
-            textShadow: ' 1px 1px 2px #000',
+            textShadow: '1px 1px 2px #000',
             marginBottom: 5,
+            fontSize: { xs: '44px', sm: '62px' },
           }}
         >
           to<span style={{ color: '#1876D1' }}>do</span>s
         </Typography>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <FormControl fullWidth={true}>
+        <form onSubmit={handleSubmit}>
+          <FormControl fullWidth>
             <TextField
               label="What's need to be done"
               variant="filled"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              sx={{ position: 'relative' }}
-              inputProps={{
-                maxLength: 100,
-              }}
+              inputProps={{ maxLength: 100 }}
               InputProps={{
                 sx: { paddingRight: '65px' },
               }}
             />
-
             <Button
               type="submit"
               variant="outlined"
               disabled={text === ''}
-              sx={{ position: 'absolute', right: 0 }}
+              sx={{
+                position: 'absolute',
+                right: 0,
+                fontSize: { xs: '14px', sm: '16px' },
+              }}
             >
               <Lottie style={{ width: 40, height: 43 }} animationData={send} />
             </Button>

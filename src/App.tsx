@@ -8,7 +8,7 @@ function App() {
   const router = createBrowserRouter([
     {
       element: <MainPage />,
-      path: '/',
+      path: '/todolist',
     },
     {
       element: <ErorPage />,

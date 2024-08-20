@@ -40,7 +40,7 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
 
   return (
     <Container>
-      <Card variant="outlined" sx={{ background: 'lightgray', maxWidth: '700px' }}>
+      <Card variant="outlined" sx={{ background: 'lightgray', maxWidth: '700px', margin: '10px auto' }}>
         <CardContent>
           <Typography
             variant="h4"
@@ -64,7 +64,7 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
                   margin: '0 25px',
                   cursor: 'default',
                   fontFamily: 'monospace',
-                  textShadow: ' 1px 1px 2px #000',
+                  textShadow: '1px 1px 2px #000',
                   textDecoration: todo.isCompleted ? 'line-through' : 'none',
                   color: todo.isCompleted ? '#dfdfdfd9' : 'white',
                 }}
@@ -85,9 +85,9 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
       </Card>
 
       <Modal active={deleteModal} setActive={setDeleteModal}>
-        <Typography variant="h2" sx={{ textShadow: ' 1px 1px 2px #000', color: '#1876D1' }}>
+        <Typography variant="h2" sx={{ textShadow: '1px 1px 2px #000', color: '#1876D1' }}>
           Are you sure you want to delete todo? <br />
-          <b style={{ textShadow: ' 1px 1px 2px #000', color: 'white' }}>{sliceName(todo.name)}</b>
+          <b style={{ textShadow: '1px 1px 2px #000', color: 'white' }}>{sliceName(todo.name)}</b>
         </Typography>
         <Box marginTop={2} display="flex" gap={10} justifyContent="center">
           <Button variant="contained" onClick={markDeleting}>
@@ -100,7 +100,7 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
       </Modal>
 
       <Modal active={editModal} setActive={setEditModal}>
-        <Typography variant="h2" sx={{ textShadow: ' 1px 1px 2px #000', color: '#1876D1' }}>
+        <Typography variant="h2" sx={{ textShadow: '1px 1px 2px #000', color: '#1876D1' }}>
           Edit Todo
         </Typography>
         <TextField
@@ -108,9 +108,7 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
           margin="normal"
           variant="outlined"
           value={newName}
-          inputProps={{
-            maxLength: 100,
-          }}
+          inputProps={{ maxLength: 100 }}
           onChange={(e) => setNewName(e.target.value)}
         />
         <Box marginTop={2} display="flex" gap={10} justifyContent="center">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { List, Button, Typography, Box } from '@mui/material';
+import { List, Button, Typography, Box, Container } from '@mui/material';
 import Todo from './Todo';
 import Modal from './Modal/Modal';
 import { useTodoContext } from '../../contexts/useTodoContext.ts';
@@ -27,21 +27,26 @@ export default function TodoList(): JSX.Element {
   };
 
   return (
-    <>
+    <Container>
       <List>
         {filteredTodos.map((todo) => (todo && todo.id ? <Todo key={todo.id} todo={todo} /> : null))}
       </List>
       {todos.length > 0 && (
-        <div
-          style={{
+        <Box
+          sx={{
             marginTop: '20px',
-            textAlign: 'center',
             display: 'flex',
             justifyContent: 'space-between',
-            gap: 40,
+            alignItems: 'center',
+            gap: { xs: 1, sm: 2 },
+            flexDirection: { xs: 'column', sm: 'row' },
+            textAlign: { xs: 'center', sm: 'left' },
           }}
         >
-          <Typography variant="h6" sx={{ textShadow: ' 1px 1px 2px #000', fontSize: 30 }}>
+          <Typography
+            variant="h6"
+            sx={{ textShadow: '1px 1px 2px #000', fontSize: { xs: '20px', sm: '30px' } }}
+          >
             Items left: <span style={{ color: '#1876D1' }}>{remainingTodos}</span>
           </Typography>
           <Box display={'flex'} gap={1}>
@@ -59,11 +64,11 @@ export default function TodoList(): JSX.Element {
           <Button variant="outlined" color="error" onClick={() => setModalClearAll(true)}>
             Clear completed
           </Button>
-        </div>
+        </Box>
       )}
 
       <Modal active={modalClearAll} setActive={setModalClearAll}>
-        <Typography variant="h2" sx={{ textShadow: ' 1px 1px 2px #000', color: '#1876D1' }}>
+        <Typography variant="h2" sx={{ textShadow: '1px 1px 2px #000', color: '#1876D1' }}>
           Are you sure you want to delete <b style={{ color: 'white' }}>ALL</b> completed todos?
         </Typography>
         <Box marginTop={2} display="flex" gap={10} justifyContent="center">
@@ -75,6 +80,6 @@ export default function TodoList(): JSX.Element {
           </Button>
         </Box>
       </Modal>
-    </>
-  )
+    </Container>
+  );
 }

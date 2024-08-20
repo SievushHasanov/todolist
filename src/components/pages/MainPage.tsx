@@ -8,7 +8,6 @@ export default function MainPage(): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    //! проверка лоудера
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -16,7 +15,7 @@ export default function MainPage(): JSX.Element {
 
   return (
     <Loader isLoading={isLoading}>
-      <Container>
+      <Container sx={{ padding: { xs: 2, sm: 3, md: 4 }, maxWidth: '100%' }}>
         <TodoForm />
         <TodoList />
       </Container>

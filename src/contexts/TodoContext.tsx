@@ -1,14 +1,6 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { TodoType } from '../types/todoTypes';
-
-export type TodoContextType = {
-  todos: TodoType[];
-  addTodo: (text: string) => void;
-  deleteTodo: (id: number | string) => void;
-  updateTodo: (id: number | string, newName: string) => void;
-  checkTodo: (id: number | string) => void;
-};
+import { TodoContextType, TodoType } from '../types/todoTypes';
 
 export const TodoContext = createContext<TodoContextType | undefined>(undefined);
 

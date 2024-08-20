@@ -4,10 +4,10 @@ export type TodoType = {
   isCompleted: boolean;
 };
 
-export type TodoListProps = {
+export type TodoContextType = {
   todos: TodoType[];
   addTodo: (text: string) => void;
-  checkTodo: (id: number | string) => void;
   deleteTodo: (id: number | string) => void;
   updateTodo: (id: number | string, newName: string) => void;
+  checkTodo: (id: number | string) => void;
 };

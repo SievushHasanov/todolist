@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ShodmonKhasanov.github.io/todolist",
+  "homepage": "https://ShodmonKhasanov.github.io/todolist",
   "name": "todolist",
   "private": true,
   "version": "0.0.0",
@@ -10,8 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",

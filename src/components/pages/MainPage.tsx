@@ -11,7 +11,7 @@ export default function MainPage(): JSX.Element {
     //! проверка лоудера
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2000);
   }, []);
 
   return (
@@ -21,5 +21,5 @@ export default function MainPage(): JSX.Element {
         <TodoList />
       </Container>
     </Loader>
-  )
+  );
 }

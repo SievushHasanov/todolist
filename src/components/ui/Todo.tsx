@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   CardContent,
-  Container,
   IconButton,
   Tooltip,
   Typography,
@@ -39,8 +38,11 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
   };
 
   return (
-    <Container>
-      <Card variant="outlined" sx={{ background: 'lightgray', maxWidth: '700px', margin: '10px auto' }}>
+    <>
+      <Card
+        variant="outlined"
+        sx={{ background: 'lightgray', maxWidth: '700px', margin: '10px auto' }}
+      >
         <CardContent>
           <Typography
             variant="h4"
@@ -120,6 +122,6 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
           </Button>
         </Box>
       </Modal>
-    </Container>
+    </>
   );
 }

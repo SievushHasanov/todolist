@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { List, Button, Typography, Box, Container } from '@mui/material';
+import { List, Button, Typography, Box } from '@mui/material';
 import Todo from './Todo';
 import Modal from './Modal/Modal';
 import { useTodoContext } from '../../contexts/useTodoContext.ts';
@@ -27,7 +27,7 @@ export default function TodoList(): JSX.Element {
   };
 
   return (
-    <Container>
+    <>
       <List>
         {filteredTodos.map((todo) => (todo && todo.id ? <Todo key={todo.id} todo={todo} /> : null))}
       </List>
@@ -80,6 +80,6 @@ export default function TodoList(): JSX.Element {
           </Button>
         </Box>
       </Modal>
-    </Container>
+    </>
   );
 }

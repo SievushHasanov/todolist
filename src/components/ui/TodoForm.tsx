@@ -2,11 +2,11 @@ import { Box, Button, FormControl, TextField, Typography } from '@mui/material';
 import Lottie from 'lottie-react';
 import send from '../../lottie/send.json';
 import { useState } from 'react';
-import { useTodoContext } from '../../contexts/useTodoContext.ts';
+import { useAppContext } from '../../contexts/useAppContext';
 
 export default function TodoForm(): JSX.Element {
   const [text, setText] = useState<string>('');
-  const { addTodo } = useTodoContext();
+  const { addTodo } = useAppContext();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

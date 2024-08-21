@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainPage from './components/pages/MainPage';
 import ErorPage from './components/pages/ErrorPage';
 import './App.css';
-import { TodoProvider } from './contexts/TodoContext';
+import { AppProvider } from './contexts/AppContext';
 
 function App() {
   const router = createBrowserRouter([
@@ -16,9 +16,9 @@ function App() {
     },
   ]);
   return (
-    <TodoProvider>
+    <AppProvider>
       <RouterProvider router={router} />
-    </TodoProvider>
+    </AppProvider>
   );
 }
 

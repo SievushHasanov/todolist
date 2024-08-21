@@ -13,7 +13,7 @@ import {
 import { TodoType } from '../../types/todoTypes';
 import Modal from './Modal/Modal';
 import { useState } from 'react';
-import { useTodoContext } from '../../contexts/useTodoContext.ts';
+import { useAppContext } from '../../contexts/useAppContext';
 
 type TodoProps = {
   todo: TodoType;
@@ -23,7 +23,7 @@ export default function Todo({ todo }: TodoProps): JSX.Element {
   const [deleteModal, setDeleteModal] = useState<boolean>(false);
   const [editModal, setEditModal] = useState<boolean>(false);
   const [newName, setNewName] = useState<string>(todo.name);
-  const { checkTodo, deleteTodo, updateTodo } = useTodoContext();
+  const { checkTodo, deleteTodo, updateTodo } = useAppContext();
 
   const markComplete = () => checkTodo(todo.id);
   const markDeleting = () => deleteTodo(todo.id);

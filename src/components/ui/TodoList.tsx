@@ -1,7 +1,7 @@
 import { List, Button, Typography, Box, Paper } from '@mui/material';
 import Todo from './Todo';
 import Modal from './Modal/Modal';
-import { useTodoListContext } from '../../contexts/useTodoListContext';
+import { useAppContext } from '../../contexts/useAppContext';
 
 export default function TodoList(): JSX.Element {
   const {
@@ -12,7 +12,7 @@ export default function TodoList(): JSX.Element {
     filteredTodos,
     remainingTodos,
     deleteCompletedTodos,
-  } = useTodoListContext();
+  } = useAppContext();
 
   return (
     <>

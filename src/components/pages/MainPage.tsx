@@ -7,7 +7,7 @@ import Loader from '../HOCs/Loader';
 export default function MainPage(): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => {
+  useEffect(() => { //! проверка загрузки
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);

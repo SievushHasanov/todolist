@@ -1,9 +1,9 @@
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
-import { useTodoContext } from '../../contexts/useTodoContext';
-import { TodoProvider } from '../../contexts/TodoContext';
+import { useAppContext } from '../../contexts/useAppContext';
+import { AppProvider } from '../../contexts/AppContext';
 
 const TestComponent = () => {
-  const { todos, addTodo, deleteTodo, updateTodo, checkTodo } = useTodoContext();
+  const { todos, addTodo, deleteTodo, updateTodo, checkTodo } = useAppContext();
   return (
     <div>
       <button onClick={() => addTodo('Test Todo')}>Add Todo</button>
@@ -28,14 +28,14 @@ const TestComponent = () => {
 describe('TodoContext', () => {
   afterEach(() => {
     cleanup();
-    localStorage.clear(); // Очистка localStorage после каждого теста
+    localStorage.clear(); 
   });
 
   test('should add a todo', () => {
     render(
-      <TodoProvider>
+      <AppProvider>
         <TestComponent />
-      </TodoProvider>,
+      </AppProvider>,
     );
 
     const addButton = screen.getByText('Add Todo');
@@ -47,9 +47,9 @@ describe('TodoContext', () => {
 
   test('should delete a todo', () => {
     render(
-      <TodoProvider>
+      <AppProvider>
         <TestComponent />
-      </TodoProvider>,
+      </AppProvider>,
     );
 
     const addButton = screen.getByText('Add Todo');
@@ -65,9 +65,9 @@ describe('TodoContext', () => {
 
   test('should check a todo', () => {
     render(
-      <TodoProvider>
+      <AppProvider>
         <TestComponent />
-      </TodoProvider>,
+      </AppProvider>,
     );
 
     const addButton = screen.getByText('Add Todo');

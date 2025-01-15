@@ -62,12 +62,14 @@ export default function TodoList(): JSX.Element {
             <Button
               variant={filter === 'active' ? 'contained' : 'outlined'}
               onClick={() => setFilter('active')}
+              disabled={filteredTodos.every((todo) => todo.isCompleted)}
             >
               Active
             </Button>
             <Button
               variant={filter === 'completed' ? 'contained' : 'outlined'}
               onClick={() => setFilter('completed')}
+              disabled={filteredTodos.every((todo) => !todo.isCompleted)}
             >
               Completed
             </Button>
